@@ -1,3 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #2d5016 75%, #3e6b1f 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 0;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            margin: 0 auto 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(62, 107, 31, 0.3);
+            border-color: rgba(62, 107, 31, 0.5);
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(62, 107, 31, 0.1);
+        }
+
+        .card h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p, .card li {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(62, 107, 31, 0.25);
+            border-color: rgba(62, 107, 31, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(62, 107, 31, 0.2);
+        }
+
+        .projects {
+            list-style: none;
+        }
+
+        .projects li {
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #2d5016;
+            transition: all 0.3s ease;
+        }
+
+        .projects li:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #3e6b1f;
+            transform: translateX(5px);
+        }
+
+        .project-name {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            display: block;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .header p {
+                font-size: 1.1em;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .icon {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-img">👨‍💻</div>
+            <h1>Sabahir Farzali</h1>
+            <p> Data Scientist | AI Developer</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/Sabahirr" class="social-link" target="_blank">
+                    <span class="icon">⭐</span> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/sabahir-farzali-0bb320292/" class="social-link" target="_blank">
+                    <span class="icon">💼</span> LinkedIn
+                </a>
+                <a href="mailto:sabahirfarzali@gmail.com" class="social-link">
+                    <span class="icon">📧</span> Email
+                </a>
+          
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="card">
+                <h2><span class="icon">🚀</span>About Me</h2>
+                <p>
+                       I have worked on projects where understanding business objectives and translating them into data-driven solutions was crucial. 
+					By analyzing complex datasets, identifying key patterns, and building predictive models, I have contributed to solving problems 
+					that directly impacted strategic decisions and operational efficiency. My experience includes collaborating closely with stakeholders 
+					to ensure that analytical insights are not only technically sound but also aligned with business goals.
+                       In addition, I have applied advanced AI techniques to geospatial and remote sensing data, such as LiDAR, satellite imagery, 
+					and aerial photography. This work involved developing solutions for object detection, segmentation, and measurement tasks, 
+					enabling accurate mapping and spatial analysis. By combining domain expertise with strong technical skills, I have delivered systems 
+					that provide actionable insights from complex geospatial datasets.
+                </p>
+                <p>
+                    When I'm not coding, you can find me exploring new technologies, reading tech blogs, 
+                    or working on personal projects that solve real-world problems.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">💻</span>Tech Stack</h2>
+                <div class="skills">
+                    <span class="skill-tag">Python</span>
+					<span class="skill-tag">R</span>
+                    <span class="skill-tag">Django</span>
+					<span class="skill-tag">Flask</span>
+					<span class="skill-tag">Selenium</span>
+                    <span class="skill-tag">BeatifulSoup</span>
+					<span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+					<span class="skill-tag">Keras</span>
+                    <span class="skill-tag">OpenCV</span>
+					<span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+					<span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">spaCy</span>
+					<span class="skill-tag">Rasterio</span>
+                    <span class="skill-tag">GeoPandas</span>
+					<span class="skill-tag">shapely</span>
+                    <span class="skill-tag">Matplotlib</span>
+					span class="skill-tag">Seaborn</span>
+					<span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">FastAPI</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📊</span>GitHub Stats</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Repositories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1K+</span>
+                        <span class="stat-label">Commits</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Stars</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🎯</span>Featured Projects</h2>
+                <ul class="projects">
+                    <li>
+                        <div class="project-name">Geospatial Data Processing Pipeline</div>
+                        <p>Advanced pipeline for processing satellite imagery and extracting building footprints using computer vision and deep learning.</p>
+                    </li>
+                    <li>
+                        <div class="project-name">AI-Powered Web Application</div>
+                        <p>Full-stack web application with machine learning integration for real-time data analysis and visualization.</p>
+                    </li>
+                    <li>
+                        <div class="project-name">Open Source Contributions</div>
+                        <p>Active contributor to various open-source projects in the Python and JavaScript ecosystems.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🎓</span>Experience & Learning</h2>
+                <p>
+                    <strong>Current Focus:</strong> Deepening expertise in computer vision, 
+                    geospatial analysis, and cloud architecture. Always eager to learn new technologies 
+                    and methodologies.
+                </p>
+                <p>
+                    <strong>Interests:</strong> Artificial Intelligence, Machine Learning, 
+                    Web Development, Cloud Computing, and Open Source Development.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📞</span>Get In Touch</h2>
+                <p>
+                    I'm always interested in collaborating on exciting projects or discussing new opportunities. 
+                    Feel free to reach out if you'd like to connect!
+                </p>
+                <p>
+                    Whether it's about a potential collaboration, a technical question, 
+                    or just a friendly chat about technology, I'd love to hear from you.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and hover effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth hover animations
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+            });
+
+            // Add click animation to social links
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+
+            // Animate stats on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumbers = entry.target.querySelectorAll('.stat-number');
+                        statNumbers.forEach(stat => {
+                            stat.style.animation = 'countUp 1s ease-out';
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            const statsCard = document.querySelector('.stats').closest('.card');
+            if (statsCard) {
+                observer.observe(statsCard);
+            }
+        });
+    </script>
+
+    <style>
+        @keyframes countUp {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</body>
+</html>
+
+
+
+
+<!-- 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -216,3 +649,4 @@ $( document ).ready( main.onReady );
 </script>
 
 </html>
+ -->
