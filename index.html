@@ -136,6 +136,37 @@
             text-align: justify;
         }
 
+        /* Special styling for Projects card to make it larger */
+        .projects-card {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #2d5016;
+            transition: all 0.3s ease;
+            height: fit-content;
+        }
+
+        .project-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #3e6b1f;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(62, 107, 31, 0.15);
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -217,6 +248,20 @@
             .about-card p {
                 font-size: 1em;
             }
+
+            .projects-card {
+                grid-column: 1;
+                padding: 30px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-item {
+                padding: 20px;
+            }
         }
 
         .icon {
@@ -261,6 +306,28 @@
                 </p>
             </div>
 
+			 <div class="card projects-card">
+                <h2><span class="icon">🎯</span>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <div class="project-name">AI-Powered Face Recognition Door Lock System</div>
+                        <div class="project-description">Developed AI-powered intelligent systems, with a primary focus on facial recognition-based door locking mechanisms. Designed and implemented both the software and hardware components of these systems, ensuring seamless integration and reliable performance. Led end-to-end development, including the creation of the recognition algorithms, hardware interfacing, and overall system architecture.</div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-name">Geospatial Data Processing Pipeline</div>
+                        <div class="project-description">Advanced pipeline for processing satellite imagery and extracting building footprints using computer vision and deep learning techniques for accurate spatial analysis and mapping applications.</div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-name">Medical Diagnosis Prediction System</div>
+                        <div class="project-description">Developed a comprehensive AI-based medical prediction system using machine learning algorithms to analyze patient data and predict potential health conditions. The system incorporates multiple diagnostic parameters, medical history analysis, and risk assessment models to provide accurate healthcare predictions and assist medical professionals in early diagnosis and treatment planning.</div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-name">AI-Powered Web Application</div>
+                        <div class="project-description">Full-stack web application with machine learning integration for real-time data analysis and visualization, providing interactive dashboards and automated insights.</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <h2><span class="icon">💻</span>Tech Stack</h2>
                 <div class="skills">
@@ -292,28 +359,6 @@
                     <span class="skill-tag">MongoDB</span>
                     <span class="skill-tag">FastAPI</span>
                 </div>
-            </div>
-
-            <div class="card">
-                <h2><span class="icon">🎯</span>Featured Projects</h2>
-                <ul class="projects">
-                    <li>
-                        <div class="project-name">AI-Powered Face Recognition Door Lock System</div>
-                        <div class="project-description">Developed AI-powered intelligent systems, with a primary focus on facial recognition-based door locking mechanisms. Designed and implemented both the software and hardware components of these systems, ensuring seamless integration and reliable performance. Led end-to-end development, including the creation of the recognition algorithms, hardware interfacing, and overall system architecture.</div>
-                    </li>
-                    <li>
-                        <div class="project-name">Geospatial Data Processing Pipeline</div>
-                        <div class="project-description">Advanced pipeline for processing satellite imagery and extracting building footprints using computer vision and deep learning techniques for accurate spatial analysis and mapping applications.</div>
-                    </li>
-                    <li>
-                        <div class="project-name">Medical Diagnosis Prediction System</div>
-                        <div class="project-description">Developed a comprehensive AI-based medical prediction system using machine learning algorithms to analyze patient data and predict potential health conditions. The system incorporates multiple diagnostic parameters, medical history analysis, and risk assessment models to provide accurate healthcare predictions and assist medical professionals in early diagnosis and treatment planning.</div>
-                    </li>
-                    <li>
-                        <div class="project-name">AI-Powered Web Application</div>
-                        <div class="project-description">Full-stack web application with machine learning integration for real-time data analysis and visualization, providing interactive dashboards and automated insights.</div>
-                    </li>
-                </ul>
             </div>
 
             <div class="card">
