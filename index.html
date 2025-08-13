@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Developer</title>
+    <title>Sabahir Farzali - Developer</title>
     <style>
         * {
             margin: 0;
@@ -121,6 +121,21 @@
             margin-bottom: 10px;
         }
 
+        /* Special styling for About Me card to make it larger */
+        .about-card {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .about-card p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -151,9 +166,9 @@
 
         .projects li {
             background: rgba(255, 255, 255, 0.1);
-            margin-bottom: 15px;
-            padding: 15px;
-            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 15px;
             border-left: 4px solid #2d5016;
             transition: all 0.3s ease;
         }
@@ -167,33 +182,13 @@
         .project-name {
             font-weight: bold;
             color: white;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-        }
-
-        .stat-item {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: white;
-            display: block;
-        }
-
-        .stat-label {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9em;
+        .project-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
         }
 
         @media (max-width: 768px) {
@@ -213,6 +208,15 @@
             .content {
                 grid-template-columns: 1fr;
             }
+
+            .about-card {
+                grid-column: 1;
+                padding: 30px;
+            }
+
+            .about-card p {
+                font-size: 1em;
+            }
         }
 
         .icon {
@@ -225,7 +229,7 @@
         <div class="header">
             <div class="profile-img">👨‍💻</div>
             <h1>Sabahir Farzali</h1>
-            <p> Data Scientist | AI Developer</p>
+            <p>Data Scientist | AI Developer</p>
             
             <div class="social-links">
                 <a href="https://github.com/Sabahirr" class="social-link" target="_blank">
@@ -237,26 +241,23 @@
                 <a href="mailto:sabahirfarzali@gmail.com" class="social-link">
                     <span class="icon">📧</span> Email
                 </a>
-          
             </div>
         </div>
 
         <div class="content">
-            <div class="card">
+            <div class="card about-card">
                 <h2><span class="icon">🚀</span>About Me</h2>
                 <p>
-                       I have worked on projects where understanding business objectives and translating them into data-driven solutions was crucial. 
-					By analyzing complex datasets, identifying key patterns, and building predictive models, I have contributed to solving problems 
-					that directly impacted strategic decisions and operational efficiency. My experience includes collaborating closely with stakeholders 
-					to ensure that analytical insights are not only technically sound but also aligned with business goals.
-                       In addition, I have applied advanced AI techniques to geospatial and remote sensing data, such as LiDAR, satellite imagery, 
-					and aerial photography. This work involved developing solutions for object detection, segmentation, and measurement tasks, 
-					enabling accurate mapping and spatial analysis. By combining domain expertise with strong technical skills, I have delivered systems 
-					that provide actionable insights from complex geospatial datasets.
+                    I have worked on projects where understanding business objectives and translating them into data-driven solutions was crucial. By analyzing complex datasets, identifying key patterns, and building predictive models, I have contributed to solving problems that directly impacted strategic decisions and operational efficiency. My experience includes collaborating closely with stakeholders to ensure that analytical insights are not only technically sound but also aligned with business goals.
                 </p>
                 <p>
-                    When I'm not coding, you can find me exploring new technologies, reading tech blogs, 
-                    or working on personal projects that solve real-world problems.
+                    In addition, I have applied advanced AI techniques to geospatial and remote sensing data, such as LiDAR, satellite imagery, and aerial photography. This work involved developing solutions for object detection, segmentation, and measurement tasks, enabling accurate mapping and spatial analysis. By combining domain expertise with strong technical skills, I have delivered systems that provide actionable insights from complex geospatial datasets.
+                </p>
+                <p>
+                    My expertise spans across machine learning, deep learning, computer vision, and data analytics. I am passionate about leveraging cutting-edge technologies to create innovative solutions that address real-world challenges. Throughout my career, I have demonstrated the ability to work effectively in cross-functional teams, communicate complex technical concepts to non-technical stakeholders, and deliver high-quality results under tight deadlines.
+                </p>
+                <p>
+                    When I'm not coding, you can find me exploring new technologies, reading tech blogs, or working on personal projects that solve real-world problems. I believe in continuous learning and staying updated with the latest developments in artificial intelligence and data science.
                 </p>
             </div>
 
@@ -264,26 +265,26 @@
                 <h2><span class="icon">💻</span>Tech Stack</h2>
                 <div class="skills">
                     <span class="skill-tag">Python</span>
-					<span class="skill-tag">R</span>
+                    <span class="skill-tag">R</span>
                     <span class="skill-tag">Django</span>
-					<span class="skill-tag">Flask</span>
-					<span class="skill-tag">Selenium</span>
-                    <span class="skill-tag">BeatifulSoup</span>
-					<span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Selenium</span>
+                    <span class="skill-tag">BeautifulSoup</span>
+                    <span class="skill-tag">Streamlit</span>
                     <span class="skill-tag">PyTorch</span>
                     <span class="skill-tag">TensorFlow</span>
-					<span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Keras</span>
                     <span class="skill-tag">OpenCV</span>
-					<span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Pandas</span>
                     <span class="skill-tag">NumPy</span>
-					<span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">Scikit-learn</span>
                     <span class="skill-tag">spaCy</span>
-					<span class="skill-tag">Rasterio</span>
+                    <span class="skill-tag">Rasterio</span>
                     <span class="skill-tag">GeoPandas</span>
-					<span class="skill-tag">shapely</span>
+                    <span class="skill-tag">Shapely</span>
                     <span class="skill-tag">Matplotlib</span>
-					span class="skill-tag">Seaborn</span>
-					<span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Tableau</span>
                     <span class="skill-tag">AWS</span>
                     <span class="skill-tag">Docker</span>
                     <span class="skill-tag">Git</span>
@@ -294,41 +295,23 @@
             </div>
 
             <div class="card">
-                <h2><span class="icon">📊</span>GitHub Stats</h2>
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Repositories</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">1K+</span>
-                        <span class="stat-label">Commits</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">25+</span>
-                        <span class="stat-label">Stars</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Followers</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
                 <h2><span class="icon">🎯</span>Featured Projects</h2>
                 <ul class="projects">
                     <li>
+                        <div class="project-name">AI-Powered Face Recognition Door Lock System</div>
+                        <div class="project-description">Developed AI-powered intelligent systems, with a primary focus on facial recognition-based door locking mechanisms. Designed and implemented both the software and hardware components of these systems, ensuring seamless integration and reliable performance. Led end-to-end development, including the creation of the recognition algorithms, hardware interfacing, and overall system architecture.</div>
+                    </li>
+                    <li>
                         <div class="project-name">Geospatial Data Processing Pipeline</div>
-                        <p>Advanced pipeline for processing satellite imagery and extracting building footprints using computer vision and deep learning.</p>
+                        <div class="project-description">Advanced pipeline for processing satellite imagery and extracting building footprints using computer vision and deep learning techniques for accurate spatial analysis and mapping applications.</div>
+                    </li>
+                    <li>
+                        <div class="project-name">Medical Diagnosis Prediction System</div>
+                        <div class="project-description">Developed a comprehensive AI-based medical prediction system using machine learning algorithms to analyze patient data and predict potential health conditions. The system incorporates multiple diagnostic parameters, medical history analysis, and risk assessment models to provide accurate healthcare predictions and assist medical professionals in early diagnosis and treatment planning.</div>
                     </li>
                     <li>
                         <div class="project-name">AI-Powered Web Application</div>
-                        <p>Full-stack web application with machine learning integration for real-time data analysis and visualization.</p>
-                    </li>
-                    <li>
-                        <div class="project-name">Open Source Contributions</div>
-                        <p>Active contributor to various open-source projects in the Python and JavaScript ecosystems.</p>
+                        <div class="project-description">Full-stack web application with machine learning integration for real-time data analysis and visualization, providing interactive dashboards and automated insights.</div>
                     </li>
                 </ul>
             </div>
@@ -385,46 +368,10 @@
                     }, 150);
                 });
             });
-
-            // Animate stats on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const statNumbers = entry.target.querySelectorAll('.stat-number');
-                        statNumbers.forEach(stat => {
-                            stat.style.animation = 'countUp 1s ease-out';
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            const statsCard = document.querySelector('.stats').closest('.card');
-            if (statsCard) {
-                observer.observe(statsCard);
-            }
         });
     </script>
-
-    <style>
-        @keyframes countUp {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-    </style>
 </body>
 </html>
-
 
 
 
