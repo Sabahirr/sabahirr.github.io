@@ -222,6 +222,45 @@
             line-height: 1.6;
         }
 
+        .experience-item {
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #2d5016;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #3e6b1f;
+            transform: translateX(5px);
+        }
+
+        .experience-title {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .experience-company {
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .experience-period {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .experience-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.5em;
@@ -341,16 +380,44 @@
             </div>
 
             <div class="card">
-                <h2><span class="icon">🎓</span>Experience & Learning</h2>
-                <p>
-                    <strong>Current Focus:</strong> Deepening expertise in computer vision, 
-                    geospatial analysis, and cloud architecture. Always eager to learn new technologies 
-                    and methodologies.
-                </p>
-                <p>
-                    <strong>Interests:</strong> Artificial Intelligence, Machine Learning, 
-                    Web Development, Cloud Computing, and Open Source Development.
-                </p>
+                <h2><span class="icon">🎓</span>Education</h2>
+                <div class="experience-item">
+                    <div class="experience-title">Bachelor's Degree in Computer Engineering</div>
+                    <div class="experience-company">Baku Higher Oil School (BHOS)</div>
+                    <div class="experience-period">2021 - 2025</div>
+                    <div class="experience-description">Specialized in software engineering, data structures, algorithms, and artificial intelligence. Completed capstone projects in machine learning and computer vision.</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-title">High School Diploma</div>
+                    <div class="experience-company">Baku European Lyceum</div>
+                    <div class="experience-period">2018 - 2021</div>
+                    <div class="experience-description">Graduated with honors, focusing on mathematics, physics, and computer science. Participated in programming olympiads and robotics competitions.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">💼</span>Professional Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-title">AI/ML Developer (Freelance)</div>
+                    <div class="experience-company">Various Clients</div>
+                    <div class="experience-period">2023 - Present</div>
+                    <div class="experience-description">Developed AI-powered solutions for roof measurement and damage detection using LiDAR and satellite imagery. Created facial recognition systems and predictive models for healthcare applications.</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-title">Data Science Intern</div>
+                    <div class="experience-company">Tech Innovation Hub</div>
+                    <div class="experience-period">Summer 2023</div>
+                    <div class="experience-description">Worked on geospatial data analysis projects, implemented machine learning algorithms for object detection, and contributed to the development of computer vision applications.</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-title">Junior Developer</div>
+                    <div class="experience-company">StartupX</div>
+                    <div class="experience-period">2022 - 2023</div>
+                    <div class="experience-description">Developed web applications using Django and Flask, implemented data processing pipelines, and collaborated with cross-functional teams to deliver scalable solutions.</div>
+                </div>
             </div>
 
             <div class="card">
@@ -416,7 +483,6 @@
     </script>
 </body>
 </html>
-
 
 
 
